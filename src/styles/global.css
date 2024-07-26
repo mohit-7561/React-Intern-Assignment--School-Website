@@ -82,17 +82,65 @@ section h2 {
   border-bottom: 2px solid #007bff;
   padding-bottom: 10px;
   display: inline-block;
+  transition: color 0.3s, border-color 0.3s;
 }
 
-section p {
+section h3 {
+  color: #0056b3;
+  font-size: 1.8em;
+  margin: 20px 0 10px;
+  transition: color 0.3s;
+}
+
+section p,
+section ul,
+section li {
+  color: #333;
+  font-size: 1.2em;
   line-height: 1.6;
-  margin: 0 0 20px;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+section li {
+  margin-bottom: 10px;
 }
 
 section:hover {
   transform: translateY(-10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   background-color: #eef;
+}
+
+section:hover h2,
+section:hover h3,
+section:hover p,
+section:hover li {
+  color: #000;
+}
+
+section h2:hover,
+section h3:hover {
+  color: #0056b3;
+  border-color: #0056b3;
+}
+
+
+/* Specific Styles for Different Section Elements */
+.facilities .facility,
+.carousel-item p,
+.carousel-item img,
+ul img,
+ul video {
+  color: #333;
+  font-size: 1em;
+  margin: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 /* Home Section */
@@ -191,8 +239,16 @@ section:hover {
 }
 
 .carousel-item img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item:hover img,
+.carousel-item:hover p {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-item p {
@@ -436,14 +492,27 @@ form label {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .map iframe {
   border: none;
-  border-radius: 8px;
   width: 100%;
   max-width: 600px;
   height: 450px;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.map:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.map:hover iframe {
+  transform: scale(1.05);
 }
 
 
