@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <section id="about">
+    <section id="about-us">
       <h2>About Us</h2>
       <p>
         Founded in 1985, Springdale Public School has been dedicated to

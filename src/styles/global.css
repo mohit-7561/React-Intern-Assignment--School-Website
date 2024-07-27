@@ -117,12 +117,7 @@ section:hover {
   background-color: #eef;
 }
 
-section:hover h2,
-section:hover h3,
-section:hover p,
-section:hover li {
-  color: #000;
-}
+
 
 section h2:hover,
 section h3:hover {
@@ -192,7 +187,8 @@ ul video {
 /* Highlights Section */
 #highlights {
   text-align: center;
-  background: #f8f9fc;
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+
   padding: 40px 20px;
 }
 
@@ -291,86 +287,572 @@ ul video {
 
 /* About Us Section */
 #about-us {
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
   color: #333;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
 }
 
-#about-us h2,
+#about-us h2 {
+  font-size: 2.5em;
+}
+
+#about-us h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #007bff;
+  margin: 10px auto 0;
+}
+
 #about-us h3 {
-  color: #333;
+  font-size: 1.8em;
 }
 
-#about-us .facilities {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+#about-us h3::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #007bff;
+  margin: 10px auto 0;
 }
 
-#about-us .facility {
-  flex: 1 1 45%;
-  background-color: #f8f9fa;
+#about-us p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#about-us .facility:hover {
+#about-us p:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Academics Section */
-#academics h2 {
+#about-us .facilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#about-us .facility {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+#about-us .facility:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#about-us .facility::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.2);
+  transition: left 0.5s ease-in-out;
+  transform: skewX(-25deg);
+}
+
+#about-us .facility:hover::before {
+  left: 100%;
+}
+
+#about-us .facility p {
+  position: relative;
+  z-index: 1;
+}
+
+#about-us .facility:hover p {
   color: #007bff;
+  text-shadow: 0 0 5px #80deea, 0 0 10px #80deea;
+}
+
+/* Ensure the headings' color doesn't change on hover */
+#about-us h2:hover,
+#about-us h3:hover {
+  color: inherit;
+  text-shadow: none;
+}
+
+
+
+/* Academics Section */
+#academics {
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#academics h2 {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#academics h2::after {
+  content: '';
+  display: block;
+  background: #007bff;
+  margin: 10px auto 0;
+}
+
+#academics .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+#academics h3 {
+  font-size: 1.8em;
+  color: #007bff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#academics h3::after {
+  content: '';
+  display: block;
+
+  background: #007bff;
+  margin: 10px auto 0;
+}
+
+#academics ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#academics li {
+  background: #ffffff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#academics li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 #academics p {
   background-color: #f8f9fa;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#academics p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Admissions Section */
+#admissions {
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#admissions::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: pulse 10s infinite;
+  z-index: 0;
+}
+
 #admissions h2 {
+  font-size: 3em;
   color: #007bff;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+#admissions h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+  margin: 10px auto 0;
+}
+
+#admissions .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+#admissions h3 {
+  font-size: 2em;
+  color: #007bff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#admissions h3::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #007bff;
+  margin: 10px auto 0;
 }
 
 #admissions p {
-  background-color: #f8f9fa;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
+
+#admissions p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+#admissions ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#admissions li {
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#admissions li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.date-highlight {
+  color: #ff5733; /* Change to desired color */
+  font-weight: bold;
+  position: relative;
+}
+
+.date-highlight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 87, 51, 0.5);
+  z-index: -1;
+}
+
+.glow-text {
+  position: relative;
+  color: #333;
+  font-weight: bold;
+}
+
+.glow-text::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  filter: blur(15px);
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+
+
 
 /* Faculty Section */
-#faculty h2 {
-  color: #007bff;
+#faculty {
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-#faculty p {
-  background-color: #f8f9fa;
-  padding: 10px;
-  border-radius: 5px;
+#faculty h2 {
+  font-size: 3em;
+  color: #007bff;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
+
+#faculty h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+  margin: 10px auto 0;
+}
+
+#faculty ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#faculty li {
+  flex: 1 1 45%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+#faculty li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.2);
+  z-index: 0;
+  transition: transform 0.3s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+#faculty li:hover::before {
+  transform: scaleX(1);
+}
+
+#faculty li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+#faculty li span {
+  position: relative;
+  z-index: 1;
+}
+
+#faculty li p {
+  font-weight: 600;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+#faculty li:hover p {
+  color: #0056b3; /* Change to a darker shade of blue when hovered */
+}
+
+.highlight {
+  color: #ff5733; /* Change to desired color */
+  font-weight: bold;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 87, 51, 0.3); /* Matching glow color */
+  transform: translate(-50%, -50%);
+  filter: blur(15px);
+  z-index: -1;
+}
+
 
 /* Students Section */
-#students h2 {
-  color: #007bff;
+#students {
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+  color: #333;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-#students p {
-  background-color: #f8f9fa;
-  padding: 10px;
-  border-radius: 5px;
+#students h2 {
+  font-size: 3em;
+  color: #007bff;
+  margin-bottom: 40px;
+  position: relative;
 }
+
+#students h2::after {
+  content: '';
+  display: block;
+
+  background: #007bff;
+  margin: 10px auto 0;
+}
+
+#students ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#students li {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+#students li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(243, 236, 120, 0.5), rgba(175, 66, 97, 0.5));
+  z-index: 0;
+  transition: transform 0.3s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+#students li:hover::before {
+  transform: scaleX(1);
+}
+
+#students li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+#students li span {
+  position: relative;
+  z-index: 1;
+}
+
+#students li p {
+  font-weight: 600;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+#students li:hover p {
+  color: #0056b3; /* Change to a darker shade of blue when hovered */
+}
+
+#students strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333; /* Ensure the headings are a neutral color */
+}
+
+#students h3 {
+  margin-top: 30px;
+  color: #333;
+}
+
 
 /* Gallery Section */
+
+#gallery{
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+  
+}
+
 #gallery h2 {
   color: #007bff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #gallery h3 {
   color: #333;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 #gallery ul {
@@ -379,6 +861,7 @@ ul video {
   gap: 20px;
   list-style: none;
   padding: 0;
+  justify-content: center;
 }
 
 #gallery li {
@@ -387,6 +870,7 @@ ul video {
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 #gallery li:hover {
@@ -394,15 +878,39 @@ ul video {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
+#gallery li:hover .image-container svg {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
 #gallery p {
   font-weight: 600;
   text-align: center;
+  margin-top: 10px;
 }
 
 #gallery img,
 #gallery video {
   width: 100%;
   border-radius: 8px;
+  display: block;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: rgba(0, 123, 255, 0.5);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 /* Contact Us Section */
@@ -410,6 +918,8 @@ ul video {
 #contact-us {
   text-align: center;
   padding: 20px;
+  background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+
   background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

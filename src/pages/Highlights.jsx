@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const Highlights = () => {
-  // Ref to access the carousel items container
   const carouselItemsRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
 
-  // Array of items to display in the carousel
   const items = [
     {
       src: "/images/annual_sports_day.jpg",
@@ -24,21 +23,20 @@ const Highlights = () => {
     },
   ];
 
-  // Function to handle the previous button click
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? items.length - 1 : prevIndex - 1
     );
+    setIsUserInteracting(true);
   };
 
-  // Function to handle the next button click
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === items.length - 1 ? 0 : prevIndex + 1
     );
+    setIsUserInteracting(true);
   };
 
-  // useEffect to update the carousel's transform property whenever the current index changes
   useEffect(() => {
     const carouselItems = carouselItemsRef.current;
     const offset = -currentIndex * 100;
@@ -46,6 +44,25 @@ const Highlights = () => {
       carouselItems.style.transform = `translateX(${offset}%)`;
     }
   }, [currentIndex]);
+
+  useEffect(() => {
+    let timeout;
+    if (!isUserInteracting) {
+      timeout = setTimeout(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === items.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000);
+    } else {
+      timeout = setTimeout(() => {
+        setIsUserInteracting(false);
+      }, 3000);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [currentIndex, isUserInteracting, items.length]);
 
   return (
     <section id="highlights">
